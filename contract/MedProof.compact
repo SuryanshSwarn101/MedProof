@@ -1,0 +1,101 @@
+pragma language_version 0.23.0;
+
+import CompactStandardLibrary;
+
+// MedProof v2 — one anonymous prescription, one private fill.
+//
+// Public state contains only prescription commitments and spent nullifiers.
+// Patient identity, directions, dates, and doctor identity never enter ledger
+// state. Directions are encrypted doctor-to-patient by the application; their
+// hash is committed so the received package cannot be changed unnoticed.
+
+struct PrescriptionCriteria {
+  patientCommit: Bytes<32>;
+  drugHash: Bytes<32>;
+  expiresAt: Uint<64>;
+  directionsHash: Bytes<32>;
+}
+
+struct PrescriptionCredential {
+  criteria: PrescriptionCriteria;
+  prescriptionNonce: Bytes<32>;
+  patientSecret: Bytes<32>;
+  patientNonce: Bytes<32>;
+  prescriptionPath: MerkleTreePath<20, Bytes<32>>;
+}
+
+export ledger doctorPk: Bytes<32>;
+export ledger supportedDrugHash: Bytes<32>;
+export ledger version: Uint<16>;
+export ledger prescriptions: HistoricMerkleTree<20, Bytes<32>>;
+export ledger filledPrescriptions: Set<Bytes<32>>;
+
+constructor(doctorSecret: Bytes<32>, drugHash: Bytes<32>) {
+  doctorPk = disclose(doctorKey(doctorSecret));
+  supportedDrugHash = disclose(drugHash);
+  version = 2;
+}
+
+witness doctorSecretKey(): Bytes<32>;
+witness prescriptionCredential(): PrescriptionCredential;
+
+circuit doctorKey(secret: Bytes<32>): Bytes<32> {
+  return persistentHash<Vector<2, Bytes<32>>>([pad(32, "medproof:doctor:v2"), secret]);
+}
+
+circuit patientCommitment(secret: Bytes<32>, nonce: Bytes<32>): Bytes<32> {
+  return persistentCommit<Vector<2, Bytes<32>>>([pad(32, "medproof:patient:v2"), secret], nonce);
+}
+
+circuit prescriptionId(criteria: PrescriptionCriteria, nonce: Bytes<32>): Bytes<32> {
+  return persistentCommit<PrescriptionCriteria>(criteria, nonce);
+}
+
+circuit fillNullifier(id: Bytes<32>, patientSecret: Bytes<32>): Bytes<32> {
+  return persistentCommit<Vector<2, Bytes<32>>>([pad(32, "medproof:fill:v2"), id], patientSecret);
+}
+
+export circuit issuePrescription(
+  patientCommit: Bytes<32>,
+  expiresAt: Uint<64>,
+  directionsHash: Bytes<32>,
+  prescriptionNonce: Bytes<32>
+): Bytes<32> {
+  assert(disclose(doctorKey(doctorSecretKey()) == doctorPk), "issuePrescription: unauthorized wallet");
+  assert(blockTimeLte(disclose(expiresAt)), "issuePrescription: expiry is in the past");
+
+  const criteria = PrescriptionCriteria {
+    patientCommit: patientCommit,
+    drugHash: supportedDrugHash,
+    expiresAt: expiresAt,
+    directionsHash: directionsHash
+  };
+  const id = prescriptionId(criteria, prescriptionNonce);
+  prescriptions.insert(id);
+  return id;
+}
+
+// Successful finality proves prescription was issued, belongs to patient,
+// matches configured medicine, is unexpired, and has not been filled before.
+// Same transaction records one-time nullifier, so proof and fill cannot drift.
+export circuit fillPrescription(): Bytes<32> {
+  const credential = prescriptionCredential();
+  const id = prescriptionId(credential.criteria, credential.prescriptionNonce);
+  const root = merkleTreePathRoot<20, Bytes<32>>(credential.prescriptionPath);
+  const issued = prescriptions.checkRoot(disclose(root));
+  const correctLeaf = credential.prescriptionPath.leaf == id;
+  const correctPatient =
+    patientCommitment(credential.patientSecret, credential.patientNonce) == credential.criteria.patientCommit;
+  const correctDrug = credential.criteria.drugHash == supportedDrugHash;
+  const notExpired = blockTimeLte(disclose(credential.criteria.expiresAt));
+  const nullifier = fillNullifier(id, credential.patientSecret);
+
+  assert(disclose(issued && correctLeaf), "fillPrescription: unknown prescription");
+  assert(disclose(correctPatient), "fillPrescription: wrong patient");
+  assert(disclose(correctDrug), "fillPrescription: wrong medicine");
+  assert(disclose(notExpired), "fillPrescription: expired");
+  assert(!filledPrescriptions.member(nullifier), "fillPrescription: already filled");
+
+  filledPrescriptions.insert(nullifier);
+  return supportedDrugHash;
+}
