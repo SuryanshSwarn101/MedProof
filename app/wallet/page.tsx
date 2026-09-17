@@ -25,7 +25,7 @@ export default function WalletPage() {
       <main className="clinical-page">
         <header className="page-intro">
           <div><span className="role-tag">Patient</span><h1>My prescription</h1></div>
-          <p>Your wallet creates one private request. Your name and wallet address are never written into prescription state.</p>
+          <p>Your wallet creates one private request. Your name and wallet address are never written into prescription state. Resetting or creating a new request generates a fresh secret locally without affecting prior completed fills.</p>
         </header>
 
         {!wallet.identity ? (
