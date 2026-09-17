@@ -92,7 +92,7 @@ export default function WalletPage() {
               </div>
             ) : (
               <div className="primary-action">
-                <div><p className="section-label">At pharmacy counter</p><h3>Authorize this fill</h3><p>One wallet transaction proves validity and permanently marks prescription filled.</p></div>
+                <div><p className="section-label">At pharmacy counter</p><h3>Authorize this fill</h3><p>One wallet transaction proves validity via ZK proof (verifying issuance, ownership, and expiry) and permanently marks prescription filled.</p></div>
                 <button className="button primary" onClick={wallet.fillPrescription} disabled={wallet.operation !== "idle"}>
                   {wallet.operation === "filling" ? "Proving and recording fill…" : "Fill prescription"}
                 </button>
