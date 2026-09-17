@@ -54,7 +54,7 @@ export default function IssuePage() {
             <aside className="order-summary">
               <p className="section-label">Contract policy</p>
               <h2>{SUPPORTED_MEDICINE}</h2>
-              <dl><div><dt>Authorized fills</dt><dd>1</dd></div><div><dt>Issuer</dt><dd>Hospital wallet</dd></div><div><dt>Patient identity</dt><dd>Hidden</dd></div></dl>
+              <dl><div><dt>Authorized fills</dt><dd>1</dd></div><div><dt>Issuer</dt><dd>Hospital wallet</dd></div><div><dt>Patient identity</dt><dd>Hidden</dd></div><div><dt>Visibility</dt><dd>Patient only (Encrypted)</dd></div></dl>
             </aside>
             <form className="order-form" onSubmit={submit}>
               <label className="field"><span>Patient request</span><textarea name="patientRequest" rows={5} placeholder="Paste request from patient" required /><small>New v2 request required. Old request codes are rejected before any transaction.</small></label>
