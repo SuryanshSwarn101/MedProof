@@ -27,7 +27,7 @@ export default function IssuePage() {
       <main className="clinical-page">
         <header className="page-intro">
           <div><span className="role-tag hospital">Hospital</span><h1>Issue prescription</h1></div>
-          <p>Paste patient request, confirm order, approve one Midnight transaction. Only anonymous commitment reaches chain.</p>
+          <p>Step 1: Paste patient request code. Step 2: Confirm order &amp; approve Midnight transaction. Only anonymous commitment reaches chain.</p>
         </header>
 
         {issued ? (
