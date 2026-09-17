@@ -9,6 +9,7 @@
     "sync:assets": "rm -rf public/zk/medproof && mkdir -p public/zk/medproof && cp -Rf contract/managed/medproof/keys public/zk/medproof/ && cp -Rf contract/managed/medproof/zkir public/zk/medproof/",
     "start": "next start",
     "lint": "eslint",
+    "compress:fill": "python3 scripts/fill_midnight_review.py",
     "test": "node --test tests/*.test.mjs",
     "ci": "npm run compile && npm run sync:assets && npm test && npm run lint && npm run build"
   },
