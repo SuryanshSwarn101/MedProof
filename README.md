@@ -16,6 +16,8 @@ Private prescription credentials on Midnight. Hospital issues an anonymous commi
 - CI workflow: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 - Product X profile: [x.com/Medproof_](https://x.com/Medproof_)
 - MVP demo video: [Watch on Google Drive](https://drive.google.com/file/d/1aLBJQPQeKt6wSrIvZx74HYKiMfbXBm6u/view?usp=sharing)
+- Feedback form: [Submit feedback](https://forms.gle/2A4tLPNSSFQos79E8)
+- Feedback responses: [View the spreadsheet](https://docs.google.com/spreadsheets/d/1YHq1RN4AvBvMVHUdhl5xSjDveUDxo0BTzei13aU8FX4/edit?usp=sharing)
 - Test-output screenshot: [4/4 passing](docs/screenshots/medproof-tests.png)
 
 The live URL returned HTTP `200` when checked on 9 August 2026. On-chain operations require 1AM configured for Midnight preprod.
