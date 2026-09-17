@@ -28,7 +28,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <Brand />
         <nav aria-label="Main navigation">
           {items.map((item) => (
-            <Link className={pathname === item.href ? "active" : ""} href={item.href} key={item.href}>
+            <Link className={pathname === item.href ? "active" : ""} href={item.href} key={item.href} title={`Role: ${item.scope} (${item.label})`}>
               <small>{item.scope}</small>{item.label}
             </Link>
           ))}
