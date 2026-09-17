@@ -30,7 +30,7 @@ export default function Home() {
 
       <section className="pathway-section">
         <header><p className="section-label">Complete workflow</p><h2>Four actions. Three people. No duplicate proof step.</h2></header>
-        <ol>{pathway.map((item, index) => <li key={`${item.role}-${item.title}`}><Link href={item.href}><span>{String(index + 1).padStart(2, "0")}</span><small>{item.role}</small><h3>{item.title}</h3><p>{item.copy}</p></Link></li>)}</ol>
+        <ol>{pathway.map((item, index) => <li key={`${item.role}-${item.title}`}><Link href={item.href}><span>Step {String(index + 1).padStart(2, "0")}</span><small>{item.role}</small><h3>{item.title}</h3><p>{item.copy}</p></Link></li>)}</ol>
       </section>
 
       <section className="privacy-strip"><div><span>On Midnight</span><strong>Anonymous commitments · spent nullifiers</strong></div><div><span>Patient only</span><strong>Identity secret · directions · credential</strong></div><div><span>Pharmacy sees</span><strong>Medicine · finalized one-time fill</strong></div></section>
