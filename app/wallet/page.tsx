@@ -49,7 +49,7 @@ export default function WalletPage() {
                 <p className="section-label">Give to prescriber</p>
                 <h2>Patient request</h2>
                 <p>This code contains an anonymous commitment and an encryption key. It contains no name or medicine.</p>
-                <textarea className="code-box" readOnly rows={5} value={wallet.patientRequest ?? ""} aria-label="Patient request code" />
+                <textarea className="code-box" readOnly rows={5} value={wallet.patientRequest ?? ""} aria-label="Patient request code" placeholder="Sample format: medproof:req:v2:..." />
                 <button className="button secondary" onClick={() => copy(wallet.patientRequest ?? "", "request")}>
                   {copied === "request" ? "Request copied" : "Copy request"}
                 </button>
