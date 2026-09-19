@@ -115,7 +115,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .single-task { max-width: 760px; margin: 60px auto; min-height: 310px; }.single-task .task-content { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
 .two-step-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }.two-step-grid .task-card { min-height: 500px; }
 .field { display: block; margin-bottom: 20px; }.field > span { display: block; margin-bottom: 7px; color: var(--navy); font-size: 10px; font-weight: 800; }
-.field input, .field textarea, .code-box { width: 100%; padding: 12px 13px; color: var(--text); border: 1px solid var(--line-strong); border-radius: 5px; background: white; resize: vertical; line-height: 1.5; }
+.field input, .field textarea, .code-box { width: 100%; padding: 13px 15px; color: var(--text); border: 1px solid var(--line-strong); border-radius: 5px; background: white; resize: vertical; line-height: 1.5; }
 .field input:focus, .field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(23,107,135,.1); outline: none; }
 .field input:disabled { color: var(--navy); background: #f1f5f6; }
 .field small { display: block; margin-top: 6px; color: var(--muted); font-size: 9px; line-height: 1.45; }
