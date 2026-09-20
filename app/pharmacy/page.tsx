@@ -40,7 +40,7 @@ export default function PharmacyPage() {
           <section className="verified-release">
             <div className="release-status"><span>✓</span><div><p className="section-label">Finalized on Midnight</p><h2>Release authorized</h2></div></div>
             <dl className="release-facts"><div><dt>Medicine</dt><dd>{verified.medicine}</dd></div><div><dt>Fill status</dt><dd>Consumed · replay blocked</dd></div><div><dt>Patient identity</dt><dd>Not disclosed</dd></div><div><dt>Transaction</dt><dd className="mono-value">{verified.transactionHash}</dd></div></dl>
-            <p className="release-note">This transaction both proved prescription validity and marked its only fill used.</p>
+            <p className="release-note">This transaction both proved prescription validity and marked its only fill used. Thank you for verifying with MedProof.</p>
             <button className="button secondary" onClick={() => { setVerified(null); setCode(""); wallet.clearError(); }}>Verify another patient</button>
           </section>
         )}
