@@ -20,6 +20,12 @@ MedProof lets a hospital issue a private prescription credential, lets a patient
 5. Pharmacy opens **Pharmacy Verify** and checks the finalized transaction ID.
 6. A second fill attempt fails because the contract records a one-time nullifier.
 
+## Level 6 Improvements
+
+- Hospital users now see a review card before confirming: patient request readiness, medicine, expiry, encrypted directions, and character count.
+- Patients can select **Add new credential** from an existing prescription view to import another issued credential without creating a new wallet identity.
+- Mobile navigation has larger touch targets and more spacing on small screens.
+
 ## Privacy Notes
 
 Never enter patient names, wallet secrets, or other sensitive identity data into request fields. Patient identity, directions plaintext, and private witnesses stay off-chain. The contract exposes only the commitments and verification state needed to prove validity.

@@ -7,6 +7,9 @@ const CONTRACT_INFO_PATH = new URL("../contract/managed/medproof/compiler/contra
 const DEPLOYMENT_PATH = new URL("../lib/deployment.ts", import.meta.url);
 const KEYS_PATH = new URL("../contract/managed/medproof/keys/", import.meta.url);
 const ZKIR_PATH = new URL("../contract/managed/medproof/zkir/", import.meta.url);
+const ISSUE_PAGE_PATH = new URL("../app/doctor/issue/page.tsx", import.meta.url);
+const WALLET_PAGE_PATH = new URL("../app/wallet/page.tsx", import.meta.url);
+const WALLET_HOOK_PATH = new URL("../hooks/useWallet.tsx", import.meta.url);
 
 const contractSource = await readFile(CONTRACT_PATH, "utf8");
 const contractInfo = JSON.parse(await readFile(CONTRACT_INFO_PATH, "utf8"));
@@ -62,4 +65,16 @@ test("preprod deployment and generated ZK assets match both circuits", async () 
     "issuePrescription.bzkir",
     "issuePrescription.zkir",
   ]);
+});
+
+test("Level 6 feedback improvements are wired into user flows", async () => {
+  const [issuePage, walletPage, walletHook] = await Promise.all([
+    readFile(ISSUE_PAGE_PATH, "utf8"),
+    readFile(WALLET_PAGE_PATH, "utf8"),
+    readFile(WALLET_HOOK_PATH, "utf8"),
+  ]);
+  assert.match(issuePage, /Review before confirming/);
+  assert.match(issuePage, /Encrypted · \{draft\.privateDirections\.length\}\/220 characters/);
+  assert.match(walletPage, /Add new credential/);
+  assert.match(walletHook, /startNewCredential/);
 });

@@ -2,7 +2,7 @@
 
 ## Feedback Collection Method
 
-Feedback was collected through the public MedProof Google Form and recorded in the repository source log [`feeback.md`](../feeback.md). Each response includes a user name, email, Preprod wallet address, feedback, and rating. Fifty responses include a Preprod wallet address.
+Feedback was collected through the public MedProof Google Form and recorded in the repository source log [`feeback.md`](../feeback.md). Each response includes a user name, email, Preprod wallet address, feedback, and rating. The Level 5 log contains 50 responses; the Level 6 addendum below records the new feedback themes used for this iteration.
 
 ## Raw Feedback Log
 
@@ -81,3 +81,15 @@ Feedback was collected through the public MedProof Google Form and recorded in t
 | Added request-code sample placeholder. | Show expected input format. | `75719e4` |
 | Increased mobile input and textarea padding. | Improve small-screen usability. | `b68b6e6` |
 | Added pharmacy completion thank-you message. | Give clear post-submit feedback. | `a412660` |
+
+## Level 6 Feedback Addendum
+
+New responses reinforced three actionable needs: explain which information is optional before selective sharing, show a final summary before confirmation, and make credential upload/new-credential actions more prominent. Mobile respondents also requested more navigation spacing. These themes informed the three Level 6 UI changes below.
+
+## Level 6 Improvements
+
+| Change | User Feedback That Triggered It | Status |
+|---|---|---|
+| Added review-before-confirming panel to the hospital issue form. | Harpreet Kaur and Sachin Rathod requested a summary of shared data before submission. | Implemented |
+| Added prominent **Add new credential** action to the patient prescription view. | Subhajit Sarkar requested a clearer upload-new-credential action. | Implemented |
+| Increased mobile navigation spacing and touch targets. | Divya Pillai and Tanvi Joshi reported cramped bottom/small-screen navigation. | Implemented |

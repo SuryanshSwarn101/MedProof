@@ -20,6 +20,16 @@ Private prescription credentials on Midnight. Hospital issues an anonymous commi
 - Feedback responses: [View the spreadsheet](https://docs.google.com/spreadsheets/d/1YHq1RN4AvBvMVHUdhl5xSjDveUDxo0BTzei13aU8FX4/edit?usp=sharing)
 - Test-output screenshot: [4/4 passing](docs/screenshots/medproof-tests.png)
 
+## Live Demo
+
+[Open MedProof on Midnight Preprod](https://med-proof-phi.vercel.app/)
+
+## What This Product Does
+
+MedProof lets an authorized hospital issue a private prescription credential. A patient proves ownership and validity without publishing identity or directions. A pharmacy verifies one finalized, one-time fill directly from Midnight.
+
+Midnight provides public verifiability while keeping private witnesses and clinical details outside public ledger state.
+
 ## Contract Address
 
 | Network | Address |
@@ -275,6 +285,43 @@ Vercel hosts frontend. Production deployment remains managed through connected V
 - [x] User guide available at [`docs/USAGE.md`](docs/USAGE.md)
 - [x] Acquisition messages prepared below
 - [x] More than 20 meaningful commits
+
+### Level 6 — Supermoon: Mainnet Launch Preparation
+
+- [x] Three feedback-driven UI improvements implemented
+- [x] Level 6 improvements documented in [`docs/FEEDBACK.md`](docs/FEEDBACK.md)
+- [x] Final user guide updated in [`docs/USAGE.md`](docs/USAGE.md)
+- [x] Level 6 user list prepared in [`LAUNCH_USERS.md`](LAUNCH_USERS.md) — 70 / 70
+- [ ] Updated contract redeployed to Preprod — requires 1AM signing and new address
+- [ ] README address table updated with redeployed address
+
+## Level 6 Improvements
+
+### What changed
+
+- Hospital issue flow now shows a review summary before wallet confirmation.
+- Patient prescription view now has a prominent **Add new credential** action.
+- Mobile navigation has larger touch targets and increased spacing.
+
+## Feedback & Iterations
+
+See [`docs/FEEDBACK.md`](docs/FEEDBACK.md) for the Level 5 raw log, themes, commit mapping, and Level 6 improvement addendum.
+
+## Level 6 Users
+
+See [`LAUNCH_USERS.md`](LAUNCH_USERS.md) for the 70-wallet Preprod launch list.
+
+## Brand Assets
+
+Brand direction is documented in the brand brief above. Logo and banner visuals remain to be created and linked here.
+
+### Brand brief
+
+- **Tagline:** Private proof for every prescription handoff.
+- **Key messages:** Patient identity stays private; hospitals issue verifiable credentials; pharmacies verify one-time fills without receiving medical history.
+- **Palette:** Midnight navy `#102F46`, clinical blue `#176B87`, proof amber `#D88924`, verified green `#16735B`, canvas `#EEF3F5`.
+- **X bio:** MedProof gives hospitals, patients, and pharmacies private prescription proofs on Midnight. Verify once. Reveal less.
+- **Banner concept:** A clean navy-to-blue gradient with a glowing prescription seal, three connected role labels, and the line “Verify permission. Reveal less.”
 
 #### User acquisition messages
 

@@ -73,7 +73,10 @@ export default function WalletPage() {
           <section className="prescription-sheet">
             <div className="sheet-header">
               <div><p className="section-label">Private prescription</p><h2>{wallet.prescription.medicine}</h2></div>
-              <span className={wallet.prescription.fillsRemaining ? "status active" : "status used"}>{wallet.prescription.fillsRemaining ? "Ready to fill" : "Filled"}</span>
+              <div className="sheet-header-actions">
+                <span className={wallet.prescription.fillsRemaining ? "status active" : "status used"}>{wallet.prescription.fillsRemaining ? "Ready to fill" : "Filled"}</span>
+                <button className="button secondary compact-button" onClick={wallet.startNewCredential}>Add new credential</button>
+              </div>
             </div>
             <div className="sheet-grid">
               <dl className="clinical-facts">

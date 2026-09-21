@@ -31,6 +31,7 @@ type WalletContextValue = WorkspaceState & {
   importPrescription(value: string): Promise<PrescriptionRecord | null>;
   fillPrescription(): Promise<FillRecord | null>;
   verifyFill(code: string): Promise<FillRecord | null>;
+  startNewCredential(): void;
   clearError(): void;
 };
 
@@ -111,6 +112,11 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
     return run("verifying", () => verifyFillOnChain(code));
   }
 
+  function startNewCredential() {
+    setState((current) => ({ ...current, prescription: null, fill: null }));
+    setError(null);
+  }
+
   const value = useMemo<WalletContextValue>(() => ({
     ...state,
     operation,
@@ -124,6 +130,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
     importPrescription,
     fillPrescription,
     verifyFill,
+    startNewCredential,
     clearError: () => setError(null),
     // Functions intentionally refresh with current wallet and credential state.
     // eslint-disable-next-line react-hooks/exhaustive-deps
