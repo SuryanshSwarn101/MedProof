@@ -20,6 +20,12 @@ Private prescription credentials on Midnight. Hospital issues an anonymous commi
 - Feedback responses: [View the spreadsheet](https://docs.google.com/spreadsheets/d/1YHq1RN4AvBvMVHUdhl5xSjDveUDxo0BTzei13aU8FX4/edit?usp=sharing)
 - Test-output screenshot: [4/4 passing](docs/screenshots/medproof-tests.png)
 
+## Contract Address
+
+| Network | Address |
+|---|---|
+| Preprod | `916ad8b74ead2c71bcfae68f63431ad2d8c5ececbf93e73be8f3f2f3b709c7c1` |
+
 ## User Feedback Implementations
 
 | Name | Email | Feedback | Solution | Fix Commit ID |
@@ -257,6 +263,32 @@ Vercel hosts frontend. Production deployment remains managed through connected V
 - [x] GitHub Actions CI passing
 - [x] Test-output screenshot included
 - [x] Demo video published
+
+### Level 5 — Full Moon: Users & Feedback
+
+- [x] Preprod demo link published: [med-proof-phi.vercel.app](https://med-proof-phi.vercel.app/)
+- [x] Preprod contract address documented above
+- [x] 50 wallet-address-bearing feedback responses collected
+- [x] Wallet list recorded in [`USERS.md`](USERS.md) — 50 / 50
+- [x] Feedback log, themes, and changes recorded in [`docs/FEEDBACK.md`](docs/FEEDBACK.md)
+- [x] Ten feedback-driven improvements implemented and linked to commits
+- [x] User guide available at [`docs/USAGE.md`](docs/USAGE.md)
+- [x] Acquisition messages prepared below
+- [x] More than 20 meaningful commits
+
+#### User acquisition messages
+
+**Discord / Telegram (under 100 words)**
+
+> Help test MedProof on Midnight Preprod. It lets a hospital issue a private prescription credential, a patient prove ownership without exposing identity or directions, and a pharmacy verify a one-time fill. Install 1AM, switch to Preprod, open https://med-proof-phi.vercel.app/, connect your wallet, and try the flow. Reply with your Preprod wallet address after testing so we can record participation. Do not share wallet secrets or real medical information.
+
+**X post (under 280 characters)**
+
+> Test MedProof on Midnight Preprod: private prescription credentials, ZK ownership proof, and one-time pharmacy verification. Install 1AM, try the live flow, and share your Preprod wallet address after testing. https://med-proof-phi.vercel.app/
+
+**Direct DM template**
+
+> Hi! I’m collecting real developer feedback for MedProof, a Midnight Preprod dApp for private prescription credentials. Please install 1AM, switch to Preprod, open https://med-proof-phi.vercel.app/, connect your wallet, and try the patient → hospital → pharmacy flow. Please use test data only. Afterward, send me your Preprod wallet address and one thing that was clear or confusing. Never send your seed phrase or private keys.
 
 ### Level 4 — Waxing Gibbous
 
