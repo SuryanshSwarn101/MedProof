@@ -12,7 +12,8 @@ Private prescription credentials on Midnight. Hospital issues an anonymous commi
 - Public repository: [github.com/SuryanshSwarn101/MedProof](https://github.com/SuryanshSwarn101/MedProof)
 - Network: Midnight `preprod`
 - Contract version: MedProof v2
-- Contract address: `916ad8b74ead2c71bcfae68f63431ad2d8c5ececbf93e73be8f3f2f3b709c7c1`
+- Contract address: `489343380103451cd9bd4d84bbdb41234732a4c9e0cb2f261f4e62de432f840d`
+- Contract explorer: [View deployed contract on 1AM Explorer](https://explorer.1am.xyz/contract/489343380103451cd9bd4d84bbdb41234732a4c9e0cb2f261f4e62de432f840d)
 - CI workflow: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 - Product X profile: [x.com/Medproof_](https://x.com/Medproof_)
 - MVP demo video: [Watch on Google Drive](https://drive.google.com/file/d/1aLBJQPQeKt6wSrIvZx74HYKiMfbXBm6u/view?usp=sharing)
@@ -34,7 +35,7 @@ Midnight provides public verifiability while keeping private witnesses and clini
 
 | Network | Address |
 |---|---|
-| Preprod | `916ad8b74ead2c71bcfae68f63431ad2d8c5ececbf93e73be8f3f2f3b709c7c1` |
+| Preprod | `489343380103451cd9bd4d84bbdb41234732a4c9e0cb2f261f4e62de432f840d` |
 
 ## User Feedback Implementations
 

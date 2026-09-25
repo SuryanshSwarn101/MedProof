@@ -51,7 +51,7 @@ test("fill circuit enforces issuance, ownership, medicine, expiry, and replay pr
 test("preprod deployment and generated ZK assets match both circuits", async () => {
   const deployment = await readFile(DEPLOYMENT_PATH, "utf8");
   assert.match(deployment, /network: "preprod"/);
-  assert.match(deployment, /916ad8b74ead2c71bcfae68f63431ad2d8c5ececbf93e73be8f3f2f3b709c7c1/);
+  assert.match(deployment, /489343380103451cd9bd4d84bbdb41234732a4c9e0cb2f261f4e62de432f840d/);
 
   assert.deepEqual((await readdir(KEYS_PATH)).sort(), [
     "fillPrescription.prover",

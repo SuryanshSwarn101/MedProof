@@ -1,6 +1,6 @@
 export const MEDPROOF_DEPLOYMENT = {
   network: "preprod",
-  contractAddress: process.env.NEXT_PUBLIC_MEDPROOF_CONTRACT_ADDRESS?.trim() ?? "916ad8b74ead2c71bcfae68f63431ad2d8c5ececbf93e73be8f3f2f3b709c7c1",
+  contractAddress: process.env.NEXT_PUBLIC_MEDPROOF_CONTRACT_ADDRESS?.trim() ?? "489343380103451cd9bd4d84bbdb41234732a4c9e0cb2f261f4e62de432f840d",
   indexerUri: "https://indexer.preprod.midnight.network/api/v4/graphql",
   indexerWsUri: "wss://indexer.preprod.midnight.network/api/v4/graphql/ws",
   zkAssetPath: "/zk/medproof/",

@@ -10,7 +10,7 @@
 - Repository: [github.com/SuryanshSwarn101/MedProof](https://github.com/SuryanshSwarn101/MedProof)
 - Product X profile: [x.com/Medproof_](https://x.com/Medproof_)
 - Demo video: [Watch on Google Drive](https://drive.google.com/file/d/1aLBJQPQeKt6wSrIvZx74HYKiMfbXBm6u/view?usp=sharing)
-- Contract address: `916ad8b74ead2c71bcfae68f63431ad2d8c5ececbf93e73be8f3f2f3b709c7c1`
+- Contract address: `489343380103451cd9bd4d84bbdb41234732a4c9e0cb2f261f4e62de432f840d`
 
 Product screenshots: [landing](docs/screenshots/medproof-home.png), [patient](docs/screenshots/medproof-patient.png), [prescriber](docs/screenshots/medproof-prescriber.png), and [pharmacy](docs/screenshots/medproof-pharmacy.png).
 
